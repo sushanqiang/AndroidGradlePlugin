@@ -37,6 +37,7 @@ gradlePlugin {
             implementationClass = 'com.Appwill.plugin.AppRouterPlugin'
         }
     }
+
 }
 我们定义了 plugins的id ,这个ID就是插件名称。在后面会根据这个名字来使用当前插件
 二、代码方式编写插件
