@@ -54,7 +54,6 @@ gradlePlugin {
      id "Approuter-plugin" apply false
 }
 ```
-
 保证运行时能够走插件任务
 之后，在app项目里，在添加使用`apply plugin: 'Approuter-plugin'`
 这样，一个本地插件开发配置就走完了，当然细节还是要自己去练一练。gradle 的task 任务是一个有向无环结构，在使用时要注意task 的先后以及依赖关系。
