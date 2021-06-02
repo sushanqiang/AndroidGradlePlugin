@@ -1,0 +1,17 @@
+apply plugin: 'groovy'
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-kapt'
+
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    api "com.android.tools.build:gradle:$apgVersion"
+    implementation 'commons-io:commons-io:2.6'
+    implementation 'org.javassist:javassist:3.27.0-GA'
+}
+
+
+Properties config = new Properties()
+config.load(project.file("nexus.properties").newDataInputStream())
+group = config.getProperty('nexus_groupId')

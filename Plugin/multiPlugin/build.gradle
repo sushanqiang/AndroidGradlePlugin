@@ -1,0 +1,25 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'groovy'
+    id 'java-gradle-plugin'
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation project(":BasePlugin")
+    implementation 'com.google.auto.service:auto-service:1.0-rc6'
+}
+
+gradlePlugin {
+    plugins {
+        version {
+            // 在 app 模块需要通过 id 引用这个插件
+            id = 'multis-plugin'
+            // 实现这个插件的类的路径
+            implementationClass = 'com.kronos.plugin.multi.MultiPlugin'
+        }
+    }
+}
